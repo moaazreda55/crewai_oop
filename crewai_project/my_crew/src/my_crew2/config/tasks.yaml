@@ -29,7 +29,7 @@ evaluation_task:
     Start with giving me precentage one for accuracy & the other for quality
     try tell me why you precentage is not hundrud and 
     if it is why you decide that
-    try to do that in about 20 lines (maximum)
+    maximum 20 lines
   agent: Evaluation_Agent
   context:
     - research_task
