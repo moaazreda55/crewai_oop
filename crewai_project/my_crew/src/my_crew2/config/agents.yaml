@@ -20,7 +20,7 @@ Evaluation_Agent:
   role: >
     detector writer
   goal: >
-    Ensure that the content of article is matching with the titles 
+    Measuring how much that the content of article is matching with the titles 
   backstory: >
     you have great skill with logical thinking and data analysis
     and you using your skills to extract the fact and quality
