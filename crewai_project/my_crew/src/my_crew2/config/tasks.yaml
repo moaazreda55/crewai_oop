@@ -1,0 +1,48 @@
+Keyword_task:
+  description: >
+    Study the {topic} well and extract the most important keywords 
+    about it try to make different from each other 
+  expected_output: >
+    5 keywords associated with {topic} 
+    don't give me any details or definitions just the 5 keywords
+  agent: Keyword_Instruction
+
+research_task:
+  description: >
+   Conduct a thorough research about the keywords provided in the previous task.
+   Make sure you find any interesting and relevant information given
+  expected_output: >
+     bullet points of the most relevant information 
+     about keywords provided in the previous task.
+  agent: researcher
+  context: 
+    - Keyword_task
+  
+evaluation_task:
+  description: >
+    telling how much the article before matching
+    the title (precentage) then evalute the quality by telling
+    how much (precentage) the content give important information
+    and not just filling lines 
+    Focus in measurments don't give me many details
+  expected_output: >
+    Start with giving me precentage one for accuracy & the other for quality
+    try tell me why you precentage is not hundrud and 
+    if it is why you decide that
+    try to do that in about 20 lines (maximum)
+  agent: Evaluation_Agent
+  context:
+    - research_task
+
+reporting_task:
+  description: >
+    Review the context you got and expand each topic into a full section for a report.
+    Make sure the report is detailed and contains any and all relevant information.
+  expected_output: >
+    A fully fledged report with the main topics, each with a full section of information.
+    Formatted as markdown without '```'
+  agent: reporting_analyst
+  context: 
+   - research_task
+   
+  
