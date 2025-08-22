@@ -43,5 +43,6 @@ reporting_task:
   agent: reporting_analyst
   context: 
    - research_task
+   - evaluation_task
    
   
